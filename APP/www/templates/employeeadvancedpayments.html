@@ -1,0 +1,79 @@
+﻿<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <br />
+            <img src="../img/admin.png" class="pull-left" />
+            <h4 class="navbar-brand font">System Admin</h4><br />
+            <a class="yellow" href="#/login">خروج</a>
+        </div>
+        <ul class="nav navbar-nav pull-right">
+            <br />
+            <br />
+            <li class="active yellow">12:00</li>
+        </ul>
+    </div>
+</nav>
+<div class="container ">
+    <br />
+    <div class="row">
+        <form name="frmClient" novalidate>
+            <div class="row">
+                <div class="form-group col-md-3 col-md-push-9 font ">
+                    <label>أسم الموظف</label>
+                    <input type="text" class="form-control" pattern="^.{1,35}$" required name="clientName" ng-model="clientName" id="clientName">
+                    <span ng-show="frmClient.clientName.$dirty && frmClient.clientName.$invalid">
+                        <span class="errorFont" ng-show="frmClient.clientName.$error.required">مطلوب</span>
+                        <span class="errorFont" ng-show="frmClient.clientName.$error.pattern">أسم العميل طويل جدا</span>
+                    </span>
+                </div>
+                <div class="form-group col-md-3 col-md-push-3 font">
+                    <br />
+                    <span>رصيد حالى : 1340</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-3 col-md-push-9 font ">
+                    <label>تاريخ</label>
+                    <input type="text" class="form-control" pattern="^.{1,35}$" required name="clientName" ng-model="clientName" id="clientName">
+                    <span ng-show="frmClient.clientName.$dirty && frmClient.clientName.$invalid">
+                        <span class="errorFont" ng-show="frmClient.clientName.$error.required">مطلوب</span>
+                        <span class="errorFont" ng-show="frmClient.clientName.$error.pattern">أسم العميل طويل جدا</span>
+                    </span>
+                </div>
+                <div class="form-group col-md-3 col-md-push-3">
+                    <label>قيمة</label>
+                    <input type="text" class="form-control" pattern="^.{1,35}$" required name="clientName" ng-model="clientName" id="clientName">
+                    <span ng-show="frmClient.clientName.$dirty && frmClient.clientName.$invalid">
+                        <span class="errorFont" ng-show="frmClient.clientName.$error.required">مطلوب</span>
+                        <span class="errorFont" ng-show="frmClient.clientName.$error.pattern">أسم العميل طويل جدا</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-8 col-md-push-4 font ">
+                    <label>ملاحظات</label>
+                    <input type="text" class="form-control" pattern="^.{1,35}$" required name="clientName" ng-model="clientName" id="clientName">
+                    <span ng-show="frmClient.clientName.$dirty && frmClient.clientName.$invalid">
+                        <span class="errorFont" ng-show="frmClient.clientName.$error.required">مطلوب</span>
+                        <span class="errorFont" ng-show="frmClient.clientName.$error.pattern">أسم العميل طويل جدا</span>
+                    </span>
+                </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-md-4 col-md-push-8">
+                    <button type="button" class="btn btn-lg btn-success">حفظ</button>
+                </div>
+                <div class="col-md-4 col-md-pull-4">
+                    <button type="button" class="btn btn-lg btn-danger">إلغاء</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

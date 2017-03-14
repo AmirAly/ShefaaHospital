@@ -1,0 +1,30 @@
+.vertical-center {
+    min-height: 100%; /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh; /* These two lines are counted as one :-)       */
+    display: flex;
+    align-items: center;
+}
+
+html body {
+    font-family: 'Century Gothic';
+    direction: rtl;
+}
+
+.jumbotron {
+    background-color: #fff !important;
+}
+
+.navbar-default {
+    height: 20vh;
+    border-bottom: 3px solid #aedff6;
+    background-color: #fff;
+}
+
+.link-btn {
+    font-size: 22px;
+    color: black;
+    margin: 2vh;
+}
+th {
+     text-align: right;
+}
