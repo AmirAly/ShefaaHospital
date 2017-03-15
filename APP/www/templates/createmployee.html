@@ -27,19 +27,19 @@
                         <span class="text-danger" ng-show="frmEmployee.employeeName.$error.pattern">أسم الموظف طويل جدا</span>
                     </span>
                 </div>
-                <div class="form-group col-md-3 ">
+                <div class="form-group col-md-3 col-md-push-3">
+                    <label>تاريخ التعيين</label>
+                    <input type="text" class="form-control" required name="date" ng-model="employee.date" id="date">
+                    <span ng-show="frmEmployee.date.$dirty && frmEmployee.date.$invalid">
+                        <span class="text-danger" ng-show="frmEmployee.date.$error.required">مطلوب</span>
+                    </span>
+                </div>
+                <div class="form-group col-md-3 col-md-pull-3">
                     <label>هاتف</label>
                     <input type="tel" class="form-control" pattern="^[0-9]{7,14}$" required name="employeePhone" ng-model="employee.phone" id="employeePhone">
                     <span ng-show="frmEmployee.employeePhone.$dirty && frmEmployee.employeePhone.$invalid">
                         <span class="text-danger" ng-show="frmEmployee.employeePhone.$error.required">مطلوب</span>
                         <span class="text-danger" ng-show="frmEmployee.employeePhone.$error.pattern">رقم الهاتف من 7 الى 14 رقم</span>
-                    </span>
-                </div>
-                <div class="form-group col-md-3">
-                    <label>تاريخ التعيين</label>
-                    <input type="text" class="form-control" required name="date" ng-model="employee.date" id="date">
-                    <span ng-show="frmEmployee.date.$dirty && frmEmployee.date.$invalid">
-                        <span class="text-danger" ng-show="frmEmployee.date.$error.required">مطلوب</span>
                     </span>
                 </div>
             </div>

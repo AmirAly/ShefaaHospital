@@ -26,7 +26,14 @@
                         <span class="text-danger" ng-show="frmClient.clientName.$error.pattern">أسم العميل طويل جدا</span>
                     </span>
                 </div>
-                <div class="form-group col-md-3 font">
+                <div class="form-group col-md-3 col-md-push-3">
+                    <label>تاريخ الدخول</label>
+                    <input type="text" class="form-control" required name="date" ng-model="client.date" id="date">
+                    <span ng-show="frmClient.date.$dirty && frmClient.date.$invalid">
+                        <span class="text-danger" ng-show="frmClient.date.$error.required">مطلوب</span>
+                    </span>
+                </div>
+                <div class="form-group col-md-3 col-md-pull-3">
                     <label>هاتف</label>
                     <input type="tel" class="form-control" pattern="^[0-9]{7,14}$" required name="clientPhone" ng-model="client.phone" id="clientPhone">
                     <span ng-show="frmClient.clientPhone.$dirty && frmClient.clientPhone.$invalid">
@@ -34,13 +41,7 @@
                         <span class="text-danger" ng-show="frmClient.clientPhone.$error.pattern">رقم الهاتف من 7 الى 14 رقم</span>
                     </span>
                 </div>
-                <div class="form-group col-md-3 font">
-                    <label>تاريخ الدخول</label>
-                    <input type="text" class="form-control" required name="date" ng-model="client.date" id="date">
-                    <span ng-show="frmClient.date.$dirty && frmClient.date.$invalid">
-                        <span class="text-danger" ng-show="frmClient.date.$error.required">مطلوب</span>
-                    </span>
-                </div>
+                
             </div>
             <br />
             <div class="row">

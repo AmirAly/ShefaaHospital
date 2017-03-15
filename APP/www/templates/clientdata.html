@@ -26,19 +26,18 @@
                         <span class="text-danger" ng-show="frmClient.clientName.$error.pattern">اسم العميل طويل جدا</span>
                     </span>
                 </div>
-                <div class="col-md-3 ">
-                    <label>إلى</label>
-                    <input type="text" class="form-control" required name="startDate" id="startDate" ng-model="client.startDate">
-                    <span ng-show="frmClient.startDate.$dirty && frmClient.startDate.$invalid">
-                        <span class="text-danger" ng-show="frmClient.startDate.$error.required">مطلوب</span>
-                    </span>
-                </div>
-
-                <div class="col-md-3 ">
+                <div class="col-md-3 col-md-push-3">
                     <label>من تاريخ</label>
                     <input type="text" class="form-control" required name="endDate" id="endDate" ng-model="client.endDate">
                     <span ng-show="frmClient.endDate.$dirty && frmClient.endDate.$invalid">
                         <span class="text-danger" ng-show="frmClient.endDate.$error.required">مطلوب</span>
+                    </span>
+                </div>
+                <div class="col-md-3 col-md-pull-3">
+                    <label>إلى</label>
+                    <input type="text" class="form-control" required name="startDate" id="startDate" ng-model="client.startDate">
+                    <span ng-show="frmClient.startDate.$dirty && frmClient.startDate.$invalid">
+                        <span class="text-danger" ng-show="frmClient.startDate.$error.required">مطلوب</span>
                     </span>
                 </div>
             </div>
