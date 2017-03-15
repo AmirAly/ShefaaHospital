@@ -18,7 +18,7 @@
     <div class="row">
         <form name="frmClient" novalidate>
             <div class="row">
-                <div class="form-group col-md-3 col-md-push-9 font ">
+                <div class="form-group col-md-3 col-md-push-9 ">
                     <label>اسم العميل</label>
                     <input type="text" class="form-control" pattern="^.{1,35}$" required name="clientName" ng-model="client.name" id="clientName">
                     <span ng-show="frmClient.clientName.$dirty && frmClient.clientName.$invalid">
@@ -44,7 +44,7 @@
             </div>
             <br />
             <div class="row">
-                <div class="form-group col-md-6 col-md-push-6 font">
+                <div class="form-group col-md-6 col-md-push-6">
                     <label>بيان</label>
                     <input type="text" class="form-control" pattern="^.{1,40}$" required name="info" ng-model="client.info" id="info">
                     <span ng-show="frmClient.info.$dirty && frmClient.info.$invalid">

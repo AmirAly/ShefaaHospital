@@ -1,13 +1,13 @@
 .vertical-center {
-    min-height: 100%; /* Fallback for browsers do NOT support vh unit */
-    min-height: 100vh; /* These two lines are counted as one :-)       */
+    min-height: 100%; 
+    min-height: 100vh; 
     display: flex;
     align-items: center;
 }
 
 html body {
-    font-family: 'Century Gothic';
     direction: rtl;
+    font-family: cocon;
 }
 
 .jumbotron {
@@ -27,4 +27,8 @@ html body {
 }
 th {
      text-align: right;
+}
+@font-face {
+    font-family: cocon;
+    src: url(../font/cocon.ttf);
 }

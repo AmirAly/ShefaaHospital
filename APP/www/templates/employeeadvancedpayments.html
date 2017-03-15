@@ -3,7 +3,7 @@
         <div class="navbar-header">
             <br />
             <img src="../img/admin.png" class="pull-left" />
-            <h4 class="navbar-brand font" ui-sref="dashboard">System Admin</h4><br />
+            <h4 class="navbar-brand " ui-sref="dashboard">System Admin</h4><br />
             <b class="text-warning" ui-sref="login">خروج</b>
         </div>
         <ul class="nav navbar-nav pull-right">
@@ -18,7 +18,7 @@
     <div class="row">
         <form name="frmEmployee" novalidate>
             <div class="row">
-                <div class="form-group col-md-3 col-md-push-9 font ">
+                <div class="form-group col-md-3 col-md-push-9  ">
                     <label>أسم الموظف</label>
                     <input type="text" class="form-control" pattern="^.{1,35}$" required name="employeeName" ng-model="employee.name" id="employeeName">
                     <span ng-show="frmEmployee.employeeName.$dirty && frmEmployee.employeeName.$invalid">
@@ -26,14 +26,14 @@
                         <span class="text-danger" ng-show="frmEmployee.employeeName.$error.pattern">أسم الموظف طويل جدا</span>
                     </span>
                 </div>
-                <div class="form-group col-md-3 col-md-push-3 font">
+                <div class="form-group col-md-3 col-md-push-3 ">
                     <br />
                     <span>رصيد حالى : 1340</span>
                 </div>
             </div>
 
             <div class="row">
-                <div class="form-group col-md-3 col-md-push-9 font ">
+                <div class="form-group col-md-3 col-md-push-9  ">
                     <label>تاريخ</label>
                     <input type="text" class="form-control" required name="date" ng-model="employee.date" id="date">
                     <span ng-show="frmEmployee.date.$dirty && frmEmployee.date.$invalid">
@@ -51,7 +51,7 @@
             </div>
 
             <div class="row">
-                <div class="form-group col-md-8 col-md-push-4 font ">
+                <div class="form-group col-md-8 col-md-push-4  ">
                     <label>ملاحظات</label>
                     <input type="text" class="form-control" pattern="^.{1,45}$" required name="notes" ng-model="employee.notes" id="notes">
                     <span ng-show="frmEmployee.notes.$dirty && frmEmployee.notes.$invalid">
