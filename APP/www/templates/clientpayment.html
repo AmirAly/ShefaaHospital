@@ -1,0 +1,116 @@
+﻿<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <br />
+            <img src="../img/admin.png" class="pull-left" />
+            <h4 class="navbar-brand" ui-sref="dashboard">System Admin</h4><br />
+            <b class="text-warning" ui-sref="login">خروج</b>
+        </div>
+        <ul class="nav navbar-nav pull-right">
+            <br />
+            <br />
+            <li class="active text-warning">12:00</li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container ">
+    <br />
+    <div class="row">
+        <form name="frmClient" novalidate>
+            <div class="row">
+                <div class="form-group col-md-2 col-md-push-10">
+                    <label>أسم العميل</label>
+                    <input type="text" class="form-control" pattern="^.{1,35}$" required name="clientName" ng-model="client.name" id="clientName">
+                    <span ng-show="frmClient.clientName.$dirty && frmClient.clientName.$invalid">
+                        <span class="text-danger" ng-show="frmClient.clientName.$error.required">مطلوب</span>
+                        <span class="text-danger" ng-show="frmClient.clientName.$error.pattern">أسم العميل طويل جدا</span>
+                    </span>
+                </div>
+                <div class="form-group col-md-2  col-md-push-6 ">
+                    <label>تاريخ</label>
+                    <input type="text" class="form-control" required name="date" ng-model="client.date" id="date">
+                    <span ng-show="frmClient.date.$dirty && frmClient.date.$invalid">
+                        <span class="text-danger" ng-show="frmClient.date.$error.required">مطلوب</span>
+                    </span>
+                </div>
+                <div class="form-group col-md-1 col-md-push-3">
+                    <label>قيمة</label>
+                    <input type="number" class="form-control" pattern="^[0-9]{0,4}$" required name="value" ng-model="client.value" id="value">
+                    <span ng-show="frmClient.value.$dirty && frmClient.value.$invalid">
+                        <span class="text-danger" ng-show="frmClient.value.$error.required">مطلوب</span>
+                        <span class="text-danger" ng-show="frmClient.value.$error.pattern">لا يزيد عن 4 ارقام</span>
+                    </span>
+                </div>
+                <div class="form-group col-md-1 col-md-push-1">
+                    <label>من حساب</label>
+                    <select class="form-control" required name="clientName">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-2 col-md-pull-2">
+                    <label>بيان</label>
+                    <input type="text" class="form-control" pattern="^.{1,25}$" required name="info" ng-model="client.info" id="info">
+                    <span ng-show="frmClient.info.$dirty && frmClient.info.$invalid">
+                        <span class="text-danger" ng-show="frmClient.info.$error.required">مطلوب</span>
+                        <span class="text-danger" ng-show="frmClient.info.$error.pattern">البيان طويل جدا</span>
+                    </span>
+                </div>
+                <div class="form-group col-md-3 col-md-pull-9 ">
+                    <br />
+                    <button type="button" class="btn btn-lg btn-success"> إضافة</button>
+                </div>
+            </div>
+        </form>
+        <br />
+        <br />
+        <br />
+    </div>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <td>أمير على أحمد</td>
+                <td>1-1-2017</td>
+                <td>15جم</td>
+                <td>كانتين</td>
+                <td>علبتين تونة</td>
+                <td></td>
+                <td><button class="btn btn-link">حذف</button></td>
+            </tr>
+            <tr>
+                <td>أمير على أحمد</td>
+                <td>1-1-2017</td>
+                <td>15جم</td>
+                <td>كانتين</td>
+                <td>علبتين تونة</td>
+                <td></td>
+                <td><button class="btn btn-link">حذف</button></td>
+            </tr>
+            <tr>
+                <td>أمير على أحمد</td>
+                <td>1-1-2017</td>
+                <td>15جم</td>
+                <td>كانتين</td>
+                <td>علبتين تونة</td>
+                <td></td>
+                <td><button class="btn btn-link">حذف</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-md-4 col-md-push-7">
+            <button type="button" class="btn btn-lg btn-success">حفظ</button>
+        </div>
+        <div class="col-md-4 col-md-pull-6">
+            <button type="button" class="btn btn-lg btn-danger" ui-sref="dashboard">إلغاء</button>
+        </div>
+    </div>
+
+</div>

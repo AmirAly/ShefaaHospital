@@ -1,0 +1,80 @@
+﻿<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <br />
+            <img src="../img/admin.png" class="pull-left" />
+            <h4 class="navbar-brand" ui-sref="dashboard">System Admin</h4><br />
+            <b class="text-warning" ui-sref="login">خروج</b>
+        </div>
+        <ul class="nav navbar-nav pull-right">
+            <br />
+            <br />
+            <li class="active text-warning">12:00</li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container ">
+    <br />
+    <div class="row">
+        <form name="frmEmployee" novalidate>
+            <div class="row">
+                <div class="form-group col-md-3 col-md-push-9 ">
+                    <label>اسم الموظف</label>
+                    <input type="text" class="form-control" pattern="^.{1,35}$" required name="employeeName" ng-model="employee.name" id="employeeName">
+                    <span ng-show="frmEmployee.employeeName.$dirty && frmEmployee.employeeName.$invalid">
+                        <span class="text-danger" ng-show="frmEmployee.employeeName.$error.required">مطلوب</span>
+                        <span class="text-danger" ng-show="frmEmployee.employeeName.$error.pattern">أسم الموظف طويل جدا</span>
+                    </span>
+                </div>
+                <div class="form-group col-md-3 col-md-push-3">
+                    <label>تاريخ التعيين</label>
+                    <input type="text" class="form-control" required name="date" ng-model="employee.date" id="date">
+                    <span ng-show="frmEmployee.date.$dirty && frmEmployee.date.$invalid">
+                        <span class="text-danger" ng-show="frmEmployee.date.$error.required">مطلوب</span>
+                    </span>
+                </div>
+                <div class="form-group col-md-3 col-md-pull-3">
+                    <label>هاتف</label>
+                    <input type="tel" class="form-control" pattern="^[0-9]{7,14}$" required name="employeePhone" ng-model="employee.phone" id="employeePhone">
+                    <span ng-show="frmEmployee.employeePhone.$dirty && frmEmployee.employeePhone.$invalid">
+                        <span class="text-danger" ng-show="frmEmployee.employeePhone.$error.required">مطلوب</span>
+                        <span class="text-danger" ng-show="frmEmployee.employeePhone.$error.pattern">رقم الهاتف من 7 الى 14 رقم</span>
+                    </span>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="form-group col-md-6 col-md-push-6 ">
+                    <label>عنوان</label>
+                    <input type="text" class="form-control" pattern="^.{1,50}$" required name="employeeAddress" ng-model="employee.address" id="employeeAddress">
+                    <span ng-show="frmEmployee.employeeAddress.$dirty && frmEmployee.employeeAddress.$invalid">
+                        <span class="text-danger" ng-show="frmEmployee.employeeAddress.$error.required">مطلوب</span>
+                        <span class="text-danger" ng-show="frmEmployee.employeeAddress.$error.pattern">العنوان طويل جدا</span>
+                    </span>
+                </div>
+                <div class="form-group col-md-3 col-md-pull-3 ">
+                    <label>رصيد حالى</label>
+                    <input type="number" class="form-control" pattern="^[0-9]{0,5}$" required name="balance" ng-model="employee.balance" id="balance">
+                    <span ng-show="frmEmployee.balance.$dirty && frmEmployee.balance.$invalid">
+                        <span class="text-danger" ng-show="frmEmployee.balance.$error.required">مطلوب</span>
+                        <span class="text-danger" ng-show="frmEmployee.balance.$error.pattern">لا يزيد عن 5 ارقام</span>
+                    </span>
+                </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-md-4 col-md-push-8">
+                    <button type="button" class="btn btn-lg btn-success">حفظ</button>
+                </div>
+                <div class="col-md-4 col-md-pull-4">
+                    <button type="button" class="btn btn-lg  btn-danger" ui-sref=" dashboard">إلغاء</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
