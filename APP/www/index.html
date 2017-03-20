@@ -18,7 +18,11 @@
     <script src="js/approutes.js"></script>
     <script src="js/directives.js"></script>
     <script src="js/services.js"></script>
-
+    <script src="js/models/sqllite.js"></script>
+    <script>
+        var sql_lite = new SqlLite();
+        sql_lite.CheckExist();
+    </script>
 </head>
 <body ng-app="app">
     <div ui-view>
