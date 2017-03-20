@@ -19,9 +19,17 @@
     <script src="js/directives.js"></script>
     <script src="js/services.js"></script>
     <script src="js/models/sqllite.js"></script>
+    <script src="js/models/accounts.js"></script>
     <script>
         var sql_lite = new SqlLite();
-        sql_lite.CheckExist();
+        sql_lite.Init();
+        var newAccount = new Accounts();
+        newAccount.Balance = 1000;
+        newAccount.Title = "EGP Case";
+        //newAccount.OpenAccount(function (res) {
+        //    console.log(res);
+        //});
+        newAccount.List(function (res) { console.log(res); });
     </script>
 </head>
 <body ng-app="app">
