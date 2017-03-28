@@ -20,16 +20,81 @@
     <script src="js/services.js"></script>
     <script src="js/models/sqllite.js"></script>
     <script src="js/models/accounts.js"></script>
+    <script src="js/models/transactions.js"></script>
+
+    <!--js-->
+    <script src="js/controllers/clientcontroller.js"></script>
+    <script src="js/controllers/clientcostcontroller.js"></script>
+    <script src="js/controllers/clientdatacontroller.js"></script>
+    <script src="js/controllers/clientpaymentcontroller.js"></script>
+    <script src="js/controllers/createemployeecontroller.js"></script>
+    <script src="js/controllers/createsalariescontroller.js"></script>
+    <script src="js/controllers/dashboardcontroller.js"></script>
+    <script src="js/controllers/employeeadvancedpaymentscontroller.js"></script>
+    <script src="js/controllers/financecontroller.js"></script>
+    <script src="js/controllers/logincontroller.js"></script>
+    <script src="js/controllers/createclientcontroller.js"></script>
+    <script src="js/controllers/updateclientcontroller.js"></script>
     <script>
         var sql_lite = new SqlLite();
         sql_lite.Init();
         var newAccount = new Accounts();
+        var newTransaction = new Transactions();
+
+        newAccount.SerialNumber = "001";
+        newAccount.Title = "Client";
+        newAccount.Type = "Client";
         newAccount.Balance = 1000;
-        newAccount.Title = "EGP Case";
+        newAccount.BasicInfo_Name = "Shaymaa mahmoud saeed";
+        newAccount.BasicInfo_Phone = "01220806315";
+        newAccount.BasicInfo_Address = "tanta";
+        newAccount.BasicInfo_CreationDate = "1-1-2017";
+
+        newTransaction.AccountId = "002";
+        newTransaction.Date = "12-1-2017";
+        newTransaction.Amount = 1500;
+        newTransaction.Statement = "salary";
+        newTransaction.Balance = 2500;
+        newTransaction.FilterationTags = "Client";
+        //
+        //console.log(newAccount);
         //newAccount.OpenAccount(function (res) {
         //    console.log(res);
         //});
-        newAccount.List(function (res) { console.log(res); });
+
+        //Enter The Id Here
+        //newAccount.RemoveAccount(id, function (res) {
+        //    console.log(res);
+        //});
+        //Change The Value Of Id At UpdateAccount Function
+        //newAccount.UpdateAccount(function (res) {
+        //    console.log(res);
+        //});
+
+        //newAccount.List(function (res) {
+        //    console.log(res);
+        //});
+        //newAccount.ListEmployee(function (res) {
+        //    console.log(res);
+        //});
+
+        //
+        //newTransaction.New(function (res) {
+        //    console.log(res);
+        //});
+        //Enter The Id Here
+        //newTransaction.RemoveTransactions(id, function (res) {
+        //    console.log(res);
+        //});
+
+        newTransaction.List(function (res) {
+            console.log(res);
+        });
+         
+        //newAccount.ListClient(function (res) {
+        //        console.log(res);
+        //    });
+
     </script>
 </head>
 <body ng-app="app">

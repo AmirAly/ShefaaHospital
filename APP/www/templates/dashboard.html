@@ -3,13 +3,13 @@
         <div class="navbar-header">
             <br />
             <img src="../img/admin.png" class="pull-left" />
-            <h4 class="navbar-brand">System Admin</h4><br />
-            <b class="text-warning" ui-sref="login">خروج</b>
+            <h4 class="navbar-brand pointer">System Admin</h4><br />
+            <b class="text-warning pointer" ui-sref="login">خروج</b>
         </div>
         <ul class="nav navbar-nav pull-right">
             <br />
             <br />
-            <li class="active text-warning">12:00</li>
+            <li class="active text-warning">{{time | date:' hh:mm a'}}</li>
         </ul>
     </div>
 </nav>
@@ -21,7 +21,7 @@
                 <img class="img-responsive" src="img/client.png" />
                 <br />
             </div>
-            <a class="link-btn" href="#/newclient">عميل جديد</a><br />
+            <a class="link-btn" href="#/createclient">عميل جديد</a><br />
             <a class="link-btn" href="#/clientcost">مصاريف عميل</a><br />
             <a class="link-btn" href="#/client">سداد عميل</a><br />
             <a class="link-btn" href="#/clientdata">حساب عميل</a><br />

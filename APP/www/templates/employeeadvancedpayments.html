@@ -3,13 +3,13 @@
         <div class="navbar-header">
             <br />
             <img src="../img/admin.png" class="pull-left" />
-            <h4 class="navbar-brand " ui-sref="dashboard">System Admin</h4><br />
-            <b class="text-warning" ui-sref="login">خروج</b>
+            <h4 class="navbar-brand pointer" ui-sref="dashboard">System Admin</h4><br />
+            <b class="text-warning pointer" ui-sref="login">خروج</b>
         </div>
         <ul class="nav navbar-nav pull-right">
             <br />
             <br />
-            <li class="active text-warning">12:00</li>
+            <li class="active text-warning">{{time | date:' hh:mm a'}}</li>
         </ul>
     </div>
 </nav>
@@ -20,29 +20,32 @@
             <div class="row">
                 <div class="form-group col-md-3 col-md-push-9  ">
                     <label>أسم الموظف</label>
-                    <input type="text" class="form-control" pattern="^.{1,35}$" required name="employeeName" ng-model="employee.name" id="employeeName">
-                    <span ng-show="frmEmployee.employeeName.$dirty && frmEmployee.employeeName.$invalid">
+                    <select class="form-control" required id="employeeName" name="employeeName" ng-model="selectedEmployee"
+                            data-ng-options="employee.BasicInfo_Name for employee in emp">
+                        <option value="" disabled selected>اختار الموظف</option>
+                    </select>
+                    <span ng-show="frmEmployee.employeeName.selectedEmployee == null && frmEmployee.employeeName.$invalid">
                         <span class="text-danger" ng-show="frmEmployee.employeeName.$error.required">مطلوب</span>
-                        <span class="text-danger" ng-show="frmEmployee.employeeName.$error.pattern">أسم الموظف طويل جدا</span>
                     </span>
                 </div>
                 <div class="form-group col-md-3 col-md-push-3 ">
                     <br />
-                    <span>رصيد حالى : 1340</span>
+                    <span>رصيد حالى : {{selectedEmployee.Balance}}</span>
                 </div>
             </div>
 
             <div class="row">
                 <div class="form-group col-md-3 col-md-push-9  ">
                     <label>تاريخ</label>
-                    <input type="text" class="form-control" required name="date" ng-model="employee.date" id="date">
+                    <input type="text" class="form-control" required pattern="[0-3]{1}[0-9]{1}-[0-9]{1}[0-9]{1}-[0-9]{4}" name="date" ng-model="newTransactions.Date" id="date">
                     <span ng-show="frmEmployee.date.$dirty && frmEmployee.date.$invalid">
                         <span class="text-danger" ng-show="frmEmployee.date.$error.required">مطلوب</span>
+                        <span class="text-danger" ng-show="frmEmployee.date.$error.pattern">برجاء إدخال صيغة التاريخ بهذه الطريقة 2000-01-01</span>
                     </span>
                 </div>
                 <div class="form-group col-md-3 col-md-push-3">
                     <label>قيمة</label>
-                    <input type="number" class="form-control" pattern="^[0-9]{0,4}$" required name="value" ng-model="employee.value" id="value">
+                    <input type="number" class="form-control" pattern="^[0-9]{0,4}$" required name="value" ng-model="newTransactions.Amount" id="value">
                     <span ng-show="frmEmployee.value.$dirty && frmEmployee.value.$invalid">
                         <span class="text-danger" ng-show="frmEmployee.value.$error.required">مطلوب</span>
                         <span class="text-danger" ng-show="frmEmployee.value.$error.pattern">لا يزيد عن 4 أرقام</span>
@@ -53,7 +56,7 @@
             <div class="row">
                 <div class="form-group col-md-8 col-md-push-4  ">
                     <label>ملاحظات</label>
-                    <input type="text" class="form-control" pattern="^.{1,45}$" required name="notes" ng-model="employee.notes" id="notes">
+                    <input type="text" class="form-control" pattern="^.{1,45}$" required name="notes" ng-model="newTransactions.Statement" id="notes">
                     <span ng-show="frmEmployee.notes.$dirty && frmEmployee.notes.$invalid">
                         <span class="text-danger" ng-show="frmEmployee.notes.$error.required">مطلوب</span>
                         <span class="text-danger" ng-show="frmEmployee.notes.$error.pattern">الملاحظات طويلة جدا</span>
@@ -62,12 +65,13 @@
             </div>
             <br />
             <br />
+            <div class="alert alert-success" ng-show="modelMsg.length > 0">{{modelMsg}}</div>
             <br />
             <br />
             <br />
             <div class="row">
                 <div class="col-md-4 col-md-push-8">
-                    <button type="button" class="btn btn-lg btn-success">حفظ</button>
+                    <button type="submit" class="btn btn-lg btn-success" ng-click="saveObj(frmEmployee)">حفظ</button>
                 </div>
                 <div class="col-md-4 col-md-pull-4">
                     <button type="button" class="btn btn-lg btn-danger" ui-sref="dashboard">إلغاء</button>

@@ -4,70 +4,111 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     .state("login", {
         url: '/login',
         views: {
-            '': { templateUrl: 'templates/login.html' }
+            '': {
+                templateUrl: 'templates/login.html',
+                controller: 'loginController'
+            }
         }
     })
     .state("dashboard", {
         url: '/dashboard',
         views: {
-            '': { templateUrl: 'templates/dashboard.html' }
+            '': {
+                templateUrl: 'templates/dashboard.html',
+                controller: 'dashboardController'
+            }
         }
     })
-    .state("newclient", {
-        url: '/newclient',
+    .state("createclient", {
+        url: '/createclient',
         views: {
-            '': { templateUrl: 'templates/newclient.html' }
+            '': {
+                templateUrl: 'templates/createclient.html',
+                controller: 'createClientController'
+            }
         }
     })
     .state("clientdata", {
         url: '/clientdata',
         views: {
-            '': { templateUrl: 'templates/clientdata.html' }
+            '': {
+                templateUrl: 'templates/clientdata.html',
+                controller: 'clientDataController'
+            }
         }
     })
     .state("createmployee", {
         url: '/createmployee',
         views: {
-            '': { templateUrl: 'templates/createmployee.html' }
+            '': {
+                templateUrl: 'templates/createmployee.html',
+                controller: 'creatEmployeeController'
+            }
         }
     })
     .state("clientcost", {
         url: '/clientcost',
         views: {
-            '': { templateUrl: 'templates/clientcost.html' }
+            '': {
+                templateUrl: 'templates/clientcost.html',
+                controller: 'clientCostController'
+            }
         }
     })
     .state("createsalaries", {
         url: '/createsalaries',
         views: {
-            '': { templateUrl: 'templates/createsalaries.html' }
+            '': {
+                templateUrl: 'templates/createsalaries.html',
+                controller: 'createSalariesController'
+            }
         }
     })
     .state("client", {
         url: '/client',
         views: {
-            '': { templateUrl: 'templates/client.html' }
+            '': {
+                templateUrl: 'templates/client.html',
+                controller: 'clientController'
+            }
         }
     })
     .state("clientpayment", {
         url: '/clientpayment',
         views: {
-            '': { templateUrl: 'templates/clientpayment.html' }
+            '': {
+                templateUrl: 'templates/clientpayment.html',
+                controller: 'clientPaymentController'
+            }
         }
     })
     .state("finance", {
         url: '/finance',
         views: {
-            '': { templateUrl: 'templates/finance.html' }
+            '': {
+                templateUrl: 'templates/finance.html',
+                controller: 'financeController'
+            }
         }
     })
     .state("employeeadvancedpayments", {
         url: '/employeeadvancedpayments',
         views: {
-            '': { templateUrl: 'templates/employeeadvancedpayments.html' }
+            '': {
+                templateUrl: 'templates/employeeadvancedpayments.html',
+                controller: 'employeeAdvancedPaymentsController'
+            }
         }
     })
-    
-    
+    .state("updateclient", {
+        url: '/updateclient/:id',
+        views: {
+            '': {
+                templateUrl: 'templates/updateclient.html',
+                controller: 'updatecClientController'
+            }
+        }
+    })
+
     $urlRouterProvider.otherwise("/login");
 });

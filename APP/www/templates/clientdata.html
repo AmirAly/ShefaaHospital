@@ -3,13 +3,13 @@
         <div class="navbar-header">
             <br />
             <img src="../img/admin.png" class="pull-left" />
-            <h4 class="navbar-brand " ui-sref="dashboard">System Admin</h4><br />
-            <b class="text-warning" ui-sref="login">خروج</b>
+            <h4 class="navbar-brand pointer" ui-sref="dashboard">System Admin</h4><br />
+            <b class="text-warning pointer" ui-sref="login">خروج</b>
         </div>
         <ul class="nav navbar-nav pull-right">
             <br />
             <br />
-            <li class="active text-warning">12:00</li>
+            <li class="active text-warning">{{time | date:' hh:mm a'}}</li>
         </ul>
     </div>
 </nav>
@@ -28,16 +28,18 @@
                 </div>
                 <div class="col-md-3 col-md-push-3">
                     <label>من تاريخ</label>
-                    <input type="text" class="form-control" required name="endDate" id="endDate" ng-model="client.endDate">
-                    <span ng-show="frmClient.endDate.$dirty && frmClient.endDate.$invalid">
-                        <span class="text-danger" ng-show="frmClient.endDate.$error.required">مطلوب</span>
+                    <input type="text" class="form-control" required name="startDate" pattern="[0-3]{1}[0-9]{1}-[0-9]{1}[0-9]{1}-[0-9]{4}" id="startDate" ng-model="client.startDate">
+                    <span ng-show="frmClient.startDate.$dirty && frmClient.startDate.$invalid">
+                        <span class="text-danger" ng-show="frmClient.startDate.$error.required">مطلوب</span>
+                        <span class="text-danger" ng-show="frmClient.startDate.$error.pattern">برجاء إدخال صيغة التاريخ بهذه الطريقة 2000-01-01</span>
                     </span>
                 </div>
                 <div class="col-md-3 col-md-pull-3">
                     <label>إلى</label>
-                    <input type="text" class="form-control" required name="startDate" id="startDate" ng-model="client.startDate">
-                    <span ng-show="frmClient.startDate.$dirty && frmClient.startDate.$invalid">
-                        <span class="text-danger" ng-show="frmClient.startDate.$error.required">مطلوب</span>
+                    <input type="text" class="form-control" required name="endDate" pattern="[0-3]{1}[0-9]{1}-[0-9]{1}[0-9]{1}-[0-9]{4}" id="endDate" ng-model="client.endDate">
+                    <span ng-show="frmClient.endDate.$dirty && frmClient.endDate.$invalid">
+                        <span class="text-danger" ng-show="frmClient.endDate.$error.required">مطلوب</span>
+                        <span class="text-danger" ng-show="frmClient.endDate.$error.pattern">برجاء إدخال صيغة التاريخ بهذه الطريقة 2000-01-01</span>
                     </span>
                 </div>
             </div>

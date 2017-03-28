@@ -32,3 +32,9 @@ th {
     font-family: cocon;
     src: url(../font/cocon.ttf);
 }
+.btnRow{
+    padding-top:0px !important;
+}
+.pointer{
+    cursor:pointer;
+}

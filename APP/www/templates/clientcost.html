@@ -3,13 +3,13 @@
         <div class="navbar-header">
             <br />
             <img src="../img/admin.png" class="pull-left" />
-            <h4 class="navbar-brand" ui-sref="dashboard">System Admin</h4><br />
-            <b class="text-warning" ui-sref="login">خروج</b>
+            <h4 class="navbar-brand pointer" ui-sref="dashboard">System Admin</h4><br />
+            <b class="text-warning pointer" ui-sref="login">خروج</b>
         </div>
         <ul class="nav navbar-nav pull-right">
             <br />
             <br />
-            <li class="active text-warning">12:00</li>
+            <li class="active text-warning">{{time | date:' hh:mm a'}}</li>
         </ul>
     </div>
 </nav>
@@ -19,9 +19,9 @@
     <div class="row">
         <form name="frmClient" novalidate>
             <div class="row">
-                <div class="form-group col-md-3 col-md-push-9  ">
+                <div class="form-group col-md-4 col-md-push-8">
                     <label>بحث</label>
-                    <input type="text" class="form-control" name="searh" ng-model="client.searh" id="searh">
+                    <input type="text" class="form-control" name="search" ng-model="client.BasicInfo_Name" id="search" />
                 </div>
             </div>
         </form>
@@ -32,42 +32,23 @@
 
     <table class="table">
         <tbody>
-            <tr>
-                <td>أمير على أحمد</td>
-                <td>1-1-2017</td>
-                <td>63001211120</td>
-                <td>320جم</td>
-                <td><button class="btn btn-link ">تعديل</button><button class="btn btn-link ">حذف</button></td>
-            </tr>
-            <tr>
-                <td>أمير على أحمد</td>
-                <td>1-1-2017</td>
-                <td> 63001211120 </td>
-                <td>320جم</td>
-                <td><button class="btn btn-link">تعديل</button><button class="btn btn-link">حذف</button></td>
-            </tr>
-            <tr>
-                <td>أمير على أحمد</td>
-                <td>1-1-2017</td>
-                <td>63001211120</td>
-                <td>320جم</td>
-                <td><button class="btn btn-link">تعديل</button><button class="btn btn-link">حذف</button></td>
+            <tr ng-repeat="row in costs | filter:client.BasicInfo_Name">
+                <td>{{row.BasicInfo_Name}}</td>
+                <td>{{row.BasicInfo_CreationDate}}</td>
+                <td>{{row.BasicInfo_Phone}}</td>
+                <td>{{row.Balance}}</td>
+                <td class="btnRow"><button class="btn btn-link" ng-click="editObj(row.id)">تعديل</button><button class="btn btn-link" ng-click="removeRow($index)">حذف</button></td>
             </tr>
         </tbody>
     </table>
     <br />
     <br />
+    <div class="alert alert-success" ng-show="modelMsg.length > 0">{{modelMsg}}</div>
     <br />
     <br />
     <br />
-
     <div class="row">
-        <div class="col-md-4 col-md-push-7">
-            <button type="button" class="btn btn-lg btn-success">حفظ</button>
-        </div>
-        <div class="col-md-4 col-md-pull-6">
             <button type="button" class="btn btn-lg btn-danger" ui-sref="dashboard">إلغاء</button>
-        </div>
     </div>
 
 </div>
