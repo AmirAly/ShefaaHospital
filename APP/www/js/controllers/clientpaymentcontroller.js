@@ -29,13 +29,15 @@
             field.$setDirty();
         });
         if (form.$valid && $scope.selectedClient != null) {
-            var trans = new Transactions();
+            var trans = {};
             trans.BasicInfo_Name = $scope.selectedClient.BasicInfo_Name;
             trans.Date = $scope.client.Date;
             trans.Amount = ($scope.client.Amount * -1);
             trans.Statement = $scope.client.Statement;
             $scope.expense.push(trans);
             console.log($scope.expense);
+            $scope.client = {};
+            $scope.selectedClient = {};
         };
     };
 

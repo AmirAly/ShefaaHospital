@@ -22,6 +22,7 @@
             });
         };
         console.log($scope.newAccount);
+        $scope.newAccount = new Accounts();
     };
         
     });

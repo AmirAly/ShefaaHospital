@@ -67,11 +67,11 @@
     <table class="table">
         <tbody>
             <tr ng-repeat="row in expense">
-                <td>{{selectedEmployee.BasicInfo_Name}}</td>
-                <td>{{employee.Date}}</td>
-                <td>{{employee.Amount}}</td>
+                <td>{{row.BasicInfo_Name}}</td>
+                <td>{{row.Date}}</td>
+                <td>{{row.Amount}}</td>
                 <td>كانتين</td>
-                <td>{{employee.Statement}}</td>
+                <td>{{row.Statement}}</td>
                 <td></td>
                 <td><button class="btn btn-link">حذف</button></td>
             </tr>

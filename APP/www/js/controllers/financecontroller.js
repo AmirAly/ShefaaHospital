@@ -31,5 +31,7 @@
                 $scope.$apply();
             });
         };
+        $scope.newTransactions = new Transactions();
+        $scope.selectedEmployee = {};
     };
 });

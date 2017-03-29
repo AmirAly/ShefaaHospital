@@ -18,16 +18,16 @@
     }, $state.params.id);
 
     $scope.saveObj = function (form) {
-        angular.forEach($scope.frmClient.$error.required, function (field) {
-            field.$setDirty();
-        });
-        if (form.$valid) {
+        //angular.forEach($scope.frmClient.$error.required, function (field) {
+        //    field.$setDirty();
+        //});
+        ////if (form.$valid) {
+            console.log('enter');
             $scope.AccountToUpdate.UpdateAccount(function (res) {
                 $scope.modelMsg = 'تم تحديث بيانات العميل بنجاح';
                 $scope.$apply();
             });
             console.log($scope.AccountToUpdate);
         };
-
-    };
+    //};
 });

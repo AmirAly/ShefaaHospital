@@ -28,7 +28,7 @@
             field.$setDirty();
         });
         if (form.$valid && $scope.selectedEmployee != null) {
-            var trans = new Transactions();
+            var trans = {};
             trans.BasicInfo_Name = $scope.selectedEmployee.BasicInfo_Name;
             trans.Date = $scope.employee.Date;
             trans.Amount = $scope.employee.Amount;
@@ -36,6 +36,8 @@
             trans.AccountId = $scope.selectedEmployee.id;
             $scope.expense.push(trans);
             console.log($scope.expense);
+            $scope.employee = {};
+            $scope.selectedEmployee = {};
         };
     };
 

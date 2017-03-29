@@ -20,6 +20,7 @@
                 $scope.modelMsg = 'تم انشاء العميل الجديد بنجاح';
                 $scope.$apply();
             });
+            $scope.newAccount = new Accounts();
             console.log($scope.newAccount);
         };
     };
