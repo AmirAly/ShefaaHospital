@@ -61,8 +61,8 @@ function Accounts() {
     $class.UpdateAccount = function (_callBack) {
         $class.sqlLite.OpenConnection();
         $class.sqlLite.db.transaction(function (tx) {
-            tx.executeSql('UPDATE Accounts SET Balance=?,BasicInfo_Name=?,BasicInfo_Phone=?,BasicInfo_Address=?,BasicInfo_CreationDate=? WHERE id=?',
-                              [$class.Balance, $class.BasicInfo_Name, $class.BasicInfo_Phone, $class.BasicInfo_Address, $class.BasicInfo_CreationDate,$class.id]
+            tx.executeSql('UPDATE Accounts SET BasicInfo_Name=?,BasicInfo_Phone=?,BasicInfo_Address=?,BasicInfo_CreationDate=? WHERE id=?',
+                              [ $class.BasicInfo_Name, $class.BasicInfo_Phone, $class.BasicInfo_Address, $class.BasicInfo_CreationDate,$class.id]
             , function (tx, res) { _callBack(res); }, function (tx, err) { console.log(tx); console.log(err) });
 
         });
