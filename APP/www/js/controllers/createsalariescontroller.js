@@ -45,8 +45,12 @@
         console.log("entered");
         
         for (j = 0 ; j < $scope.expense.length; j++) {
-            $scope.expense.AccountId = $scope.selectedEmployee.id;
-            $scope.expense[j].New(function (res) {
+            console.log($scope.expense[j]);
+            $scope.newTransactions.BasicInfo_Name = $scope.expense[j].BasicInfo_Name;
+            $scope.newTransactions.Date = $scope.expense[j].Date;
+            $scope.newTransactions.Amount = $scope.expense[j].Amount;
+            $scope.newTransactions.Statement = $scope.expense[j].Statement;
+            $scope.newTransactions.New(function (res) {
                 console.log(res);
                 console.log($scope.newTransactions.AccountId);
             });

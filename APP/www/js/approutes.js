@@ -82,6 +82,15 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         }
     })
+    .state("generalexpenses", {
+        url: '/generalexpenses',
+        views: {
+            '': {
+                templateUrl: 'templates/generalexpenses.html',
+                controller: 'generalExpensesController'
+            }
+        }
+    })
     .state("finance", {
         url: '/finance',
         views: {
