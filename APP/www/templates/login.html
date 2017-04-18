@@ -10,7 +10,7 @@
         <br />
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
-                <form name="frmLogin" ng-submit="submitForm(frmLogin.$valid)" novalidate>
+                <form name="frmLogin" novalidate>
                     <div class="form-group">
                         <label for="pwd">كلمة المرور</label>
                         <input type="password" class="form-control" id="pwd" name="pwd" pattern="^.{4,8}$"  ng-model="password" required>
@@ -20,7 +20,7 @@
                         </span>
                     </div>
                     <div class="alert alert-danger" ng-show="modelMsg.length > 0">{{modelMsg}}</div>
-                    <button type="submit" class="btn btn-default" ng-click="submit()">دخول</button>
+                    <button type="submit" class="btn btn-default" ng-disabled="frmLogin.$invalid" ng-click="submit()">دخول</button>
                 </form>
             </div>
         </div>
