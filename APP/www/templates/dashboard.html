@@ -1,15 +1,17 @@
-﻿<nav class="navbar navbar-default">
+﻿<nav class="navbar navbar-default dashboardPage">
     <div class="container-fluid">
         <div class="navbar-header">
             <br />
             <img src="../img/admin.png" class="pull-left" />
-            <h4 class="navbar-brand pointer">System Admin</h4><br />
+            <h4 class="navbar-brand">System Admin</h4><br />
             <b class="text-warning pointer" ui-sref="login">خروج</b>
         </div>
         <ul class="nav navbar-nav pull-right">
             <br />
             <br />
             <li class="active text-warning">{{time | date:' hh:mm a'}}</li>
+            <br />
+            <li><h6 data-toggle="modal" data-target="#myModal" class="text-primary pointer">تغيير كلمة المرور</h6></li>
         </ul>
     </div>
 </nav>
@@ -52,6 +54,47 @@
             <a class="link-btn" href="#/createsalaries">رواتب</a><br />
         </div>
     </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">تغيير كلمة المرور</h4>
+                </div>
+                <div class="modal-body">
+                    <form name="frmChangePass" novalidate>
+                        <div class="form-group">
+                            <label for="newPass">كلمة المرور الجديدة</label>
+                            <input type="password" class="form-control" pattern=".{4,8}" name="newPass" id="newPass" ng-model="newPass" required>
+                            <span ng-show="frmChangePass.newPass.$dirty && frmChangePass.newPass.$invalid">
+                                <span class="text-danger" ng-show="frmChangePass.newPass.$error.required">مطلوب</span>
+                                <span class="text-danger" ng-show="frmChangePass.newPass.$error.pattern">كلمة المرور من 4 إالى 8 حروف أو رموز أو أرقام</span>
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPass">تأكيد كلمة المرور</label>
+                            <input type="password" class="form-control" pattern=".{4,8}" name="confirmPass" id="confirmPAss" required ng-model="confirmPass" compare-to="newPass">
+                            <span ng-show="frmChangePass.confirmPass.$dirty && frmChangePass.confirmPass.$invalid">
+                                <span class="text-danger" ng-show="frmChangePass.confirmPass.$error.required">مطلوب</span>
+                                <span class="text-danger" ng-show="frmChangePass.confirmPass.$error.compareTo">كلمتى المرور يجب ان يكونا متماثلتين</span>
+                            </span>
+                        </div>
+                    </form>
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default"  data-dismiss="modal">إغلاق</button>
+                    <button type="button" class="btn btn-primary pull-left" data-dismiss="modal" ng-disabled="frmChangePass.$invalid" ng-click="saveChanges()">حفظ التعديل</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 </div>
 <footer class="navbar-fixed-bottom text-center">
     <div class="row">
