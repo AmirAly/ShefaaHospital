@@ -14,7 +14,6 @@
         for (var i = 0; i < res.rows.length; i++) {
             $scope.emp.push(res.rows.item(i));
         }
-        console.log($scope.emp);
         $scope.$apply();
     });
 
@@ -23,9 +22,7 @@
             field.$setDirty();
         });
         if (form.$valid && $scope.selectedEmployee != null) {
-            console.log("entered");
             $scope.newTransactions.AccountId = $scope.selectedEmployee.id;
-            console.log($scope.newTransactions);
             $scope.newTransactions.New(function (res) {
                 $scope.modelMsg = 'تم إضافة التمويل الجديد بنجاح';
                 $scope.$apply();

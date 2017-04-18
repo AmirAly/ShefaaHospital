@@ -14,7 +14,6 @@
         for (var i = 0; i < res.rows.length; i++) {
             $scope.emp.push(res.rows.item(i));
         }
-        console.log($scope.emp);
         $scope.$apply();
     });
 
@@ -23,13 +22,10 @@
             field.$setDirty();
         });
         if (form.$valid && $scope.selectedEmployee != null) {
-            console.log("entered");
             $scope.newTransactions.AccountId = $scope.selectedEmployee.id;
             $scope.newTransactions.Amount = ($scope.newTransactions.Amount * -1);
-            console.log($scope.newTransactions);
             $scope.newTransactions.New(function (res) {
                 $scope.modelMsg = ' تم خصم السلفة من الحساب الحالى للموظف بنجاح';
-                console.log($scope.newTransactions.Amount);
                 $scope.$apply();
             });
         };

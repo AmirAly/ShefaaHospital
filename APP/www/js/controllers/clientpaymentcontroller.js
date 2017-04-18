@@ -16,7 +16,6 @@
         for (var i = 0; i < res.rows.length; i++) {
             $scope.clientList.push(res.rows.item(i));
         }
-        console.log($scope.clientList);
         $scope.$apply();
     });
 
@@ -35,24 +34,18 @@
             trans.Amount = ($scope.client.Amount * -1);
             trans.Statement = $scope.client.Statement;
             $scope.expense.push(trans);
-            console.log($scope.expense);
             $scope.client = {};
             $scope.selectedClient = {};
         };
     };
 
     $scope.saveObj = function () {
-        console.log("entered");
         for (j = 0 ; j < $scope.expense.length; j++) {
-            console.log($scope.newTransactions);
-            console.log($scope.expense[j]);
             $scope.newTransactions.BasicInfo_Name = $scope.expense[j].BasicInfo_Name;
             $scope.newTransactions.Date = $scope.expense[j].Date;
             $scope.newTransactions.Amount = $scope.expense[j].Amount;
             $scope.newTransactions.Statement = $scope.expense[j].Statement;
             $scope.newTransactions.New(function (res) {
-                console.log(res);
-                console.log("entered");
             });
         };
         $scope.modelMsg = ' تم إضافة حسابات العميل و حفظها بنجاح';

@@ -14,7 +14,6 @@
         for (var i = 0; i < res.rows.length; i++) {
             $scope.clientList.push(res.rows.item(i));
         }
-        console.log($scope.clientList);
         $scope.$apply();
     });
 
@@ -23,17 +22,13 @@
             field.$setDirty();
         });
         if (form.$valid && $scope.selectedClient != null) {
-            console.log("entered");
             $scope.newTransactions.AccountId = $scope.selectedClient.id;
-            console.log($scope.newTransactions);
             $scope.newTransactions.New(function (res) {
                 $scope.modelMsg = ' تم حفظ بيانات سدادالعميل بنجاح ';
                 $scope.newTransactions = new Transactions();
                 $scope.selectedClient = {};
-                console.log(res);
                 $scope.$apply();
             });
-            console.log($scope.newTransactions);
         };
     };
 

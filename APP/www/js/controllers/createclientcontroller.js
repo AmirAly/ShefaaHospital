@@ -21,7 +21,6 @@
                 $scope.$apply();
             });
             $scope.newAccount = new Accounts();
-            console.log($scope.newAccount);
         };
     };
 

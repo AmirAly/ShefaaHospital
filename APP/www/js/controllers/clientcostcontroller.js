@@ -10,10 +10,8 @@
 
     $scope.costs = [];
     $scope.newAccount.ListClients(function (res) {
-        console.log(res);
         for (i = 0; i < res.rows.length; i++) {
             $scope.costs.push(res.rows.item(i));
-            console.log($scope.costs);
             $scope.$apply();
         };
     });
@@ -23,7 +21,6 @@
     };
 
     $scope.editObj = function (_id) {
-        console.log(_id);
         $scope.newAccount.id = _id;
         window.location = 'http://localhost:5294/index.html#/updateclient/'+_id;
     };
