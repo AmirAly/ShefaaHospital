@@ -23,12 +23,19 @@
         $scope.expense.splice(index, 1);
     };
 
+    $scope.optionValue = function () {
+        console.log($scope.selectedOption);
+    }
+    $scope.items = ['كانتين', 'المكان'];
     $scope.addRow = function (form) {
         angular.forEach($scope.frmClient.$error.required, function (field) {
             field.$setDirty();
         });
         if (form.$valid && $scope.selectedClient != null) {
             var trans = {};
+            trans.transType = 'المكان';
+            if ($scope.selectedOptions === 'كانتين')
+                trans.transType = 'كانتين';
             trans.BasicInfo_Name = $scope.selectedClient.BasicInfo_Name;
             trans.Date = $scope.client.Date;
             trans.Amount = ($scope.client.Amount * -1);

@@ -22,6 +22,6 @@
 
     $scope.editObj = function (_id) {
         $scope.newAccount.id = _id;
-        window.location = 'http://localhost:5294/index.html#/updateclient/'+_id;
+        window.location = './#/updateclient/'+_id;
     };
 });
